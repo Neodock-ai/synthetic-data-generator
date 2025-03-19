@@ -1,7 +1,12 @@
 import pandas as pd
 import numpy as np
 import logging
-from sdv.tabular import CTGAN
+
+# Attempt to import CTGAN from different SDV versions
+try:
+    from sdv.tabular import CTGAN
+except ModuleNotFoundError:
+    from sdv.single_table import CTGAN
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
